@@ -1,0 +1,4 @@
+git remote rm origin
+git remote add origin https://dan@git.arcmage.com/dan/selenium-experiments.git
+git remote -v
+
