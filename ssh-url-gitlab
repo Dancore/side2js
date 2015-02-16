@@ -1,0 +1,7 @@
+git remote rm origin
+# This works for me (if port is set in .ssh/config):
+git remote add origin git@git.arcmage.com:dan/selenium-experiments.git
+# The following variants doesnt work for me (with non-standard ssh port):
+#git remote add origin ssh://dan@git.arcmage.com:10022/dan/selenium-experiments.git
+#git remote add origin ssh://dan@git.arcmage.com/dan/selenium-experiments.git
+git remote -v
