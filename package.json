@@ -5,6 +5,7 @@
   "description": "testing stuff with selenium testing",
   "repository": "https://git.arcmage.com/dan/selenium-experiments",
   "dependencies": {
+    "browserstack-webdriver": "^2.41.1",
     "selenium-webdriver": "^2.44.0"
   }
 }
