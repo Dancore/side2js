@@ -7,5 +7,10 @@
   "dependencies": {
     "browserstack-webdriver": "^2.41.1",
     "selenium-webdriver": "^2.44.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-curl": "^2.1.0",
+    "grunt-zip": "^0.16.2"
   }
 }
