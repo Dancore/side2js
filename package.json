@@ -1,0 +1,10 @@
+{
+  "name": "selenium-experiments",
+  "private": true,
+  "version": "0.0.0",
+  "description": "testing stuff with selenium testing",
+  "repository": "https://git.arcmage.com/dan/selenium-experiments",
+  "dependencies": {
+    "selenium-webdriver": "^2.44.0"
+  }
+}
