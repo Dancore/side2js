@@ -26,3 +26,4 @@ node_modules
 
 *.local*
 *.sublime-*
+resend_results_batch/csv/*
