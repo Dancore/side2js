@@ -13,5 +13,10 @@ Host git.arcmage.com
 
 - That works! :)
 
-Suggested git config in Linux (Certificate/auth issue solution, etc):
+*Suggested git config in Linux* (Certificate/auth issue solution, etc):
 http.sslcainfo=/etc/ssl/arcmage-rootCA.pem
+git config --global http.sslcainfo /etc/ssl/arcmage-rootCA.pem
+
+User config:
+git config --global user.name "user"
+git config --global user.email "user@gmail.com"
