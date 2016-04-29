@@ -12,3 +12,6 @@ Host git.arcmage.com
     Port 10022
 
 - That works! :)
+
+Suggested git config in Linux (Certificate/auth issue solution, etc):
+http.sslcainfo=/etc/ssl/arcmage-rootCA.pem
