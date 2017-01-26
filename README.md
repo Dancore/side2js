@@ -19,12 +19,12 @@ http.sslcainfo=/etc/ssl/arcmage-rootCA.pem
 
 git config --global http.sslcainfo /etc/ssl/arcmage-rootCA.pem
 
-*Similar in Windows* if required:
+*Similar in Windows* (if required):
 
 git config --global http.sslcainfo E:/Apps/Git/arcmage-rootCA.pem
 
 User config:
 
-git config --global user.name "user"{break}
+git config --global user.name "user"
 
 git config --global user.email "user@gmail.com"
