@@ -1,4 +1,4 @@
-==TEST==
+## TEST
 
 *Tips & tricks*
 
@@ -25,6 +25,7 @@ git config --global http.sslcainfo E:/Apps/Git/arcmage-rootCA.pem
 
 User config:
 
+```sh
 git config --global user.name "user"
-
 git config --global user.email "user@gmail.com"
+```
