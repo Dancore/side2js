@@ -6,11 +6,10 @@
   "repository": "https://git.arcmage.com/dan/selenium-experiments",
   "dependencies": {
     "browserstack-webdriver": "^2.41.1",
-    "selenium-webdriver": "^2.44.0"
+    "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.3",
     "grunt-curl": "^2.1.0",
-    "grunt-zip": "^0.16.2"
-  }
+    "grunt-zip": "^0.18.1"
 }
