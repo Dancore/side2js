@@ -4,7 +4,8 @@ module.exports = function (grunt) {
     // Download external resources
     curl: {
       chromedriver: {
-        src: 'http://chromedriver.storage.googleapis.com/2.14/chromedriver_mac32.zip',
+        //src: 'http://chromedriver.storage.googleapis.com/2.14/chromedriver_mac32.zip',
+        src: 'http://chromedriver.storage.googleapis.com/2.43/chromedriver_win32.zip',
         dest: 'tmp/chromedriver.zip'
       }
     },
