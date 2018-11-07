@@ -24,15 +24,24 @@ var chrome = new webdriver.Builder()
 // var driver = new webdriver.Builder().forBrowser('chrome').build();
 var driver = chrome.build();
 
-driver.get('http://www.google.com/ncr');
-driver.findElement(webdriver.By.name('q')).sendKeys('webdriver');
-driver.findElement(webdriver.By.name('btnG')).click();
-//driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+// driver.get('http://www.google.com/ncr');
+// driver.findElement(webdriver.By.name('q')).sendKeys('webdriver');
+// driver.findElement(webdriver.By.name('btnG')).click();
+// //driver.wait(until.titleIs('webdriver - Google Search'), 1000);
 
-driver.wait(function() {
- return driver.getTitle().then(function(title) {
-   return title === 'webdriver - Google Search';
- });
-}, 1000);
+// driver.wait(function() {
+//  return driver.getTitle().then(function(title) {
+//    return title === 'webdriver - Google Search';
+//  });
+// }, 1000);
 
-driver.quit();
+// driver.quit();
+
+driver.get('https://www.google.com').then(function(){
+  driver.findElement(webdriver.By.name('q')).sendKeys('BrowserStack\n').then(function(){
+    driver.getTitle().then(function(title) {
+      console.log(title);
+      driver.quit();
+    }).catch(() => {});
+  });
+}).catch(error => { console.log('caught', error.message); });
