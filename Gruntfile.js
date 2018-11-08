@@ -5,8 +5,10 @@ module.exports = function (grunt) {
     curl: {
       chromedriver: {
         //src: 'http://chromedriver.storage.googleapis.com/2.14/chromedriver_mac32.zip',
-        src: 'http://chromedriver.storage.googleapis.com/2.43/chromedriver_win32.zip',
-        dest: 'tmp/chromedriver.zip'
+        // src: 'http://chromedriver.storage.googleapis.com/2.43/chromedriver_win32.zip',
+        src: 'https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-win64.zip',
+        // dest: 'tmp/chromedriver.zip'
+        dest: 'tmp/driver.zip'
       }
     },
  
@@ -14,7 +16,7 @@ module.exports = function (grunt) {
     unzip: {
       chromedriver: {
         //src: '<config:curl.chromedriver.dest>',
-        src: 'tmp/chromedriver.zip',
+        src: 'tmp/driver.zip',
         dest: 'node_modules/.bin/'
       }
     }
