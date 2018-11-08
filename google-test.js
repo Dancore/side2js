@@ -17,7 +17,7 @@ var options = new edge.Options();
 var driver = edge.Driver.createSession(options, service);
 
 driver.get('https://www.google.com').then(function(){
-  driver.findElement(webdriver.By.name('q')).sendKeys('BrowserStack\n').then(function(){
+  driver.findElement(webdriver.By.name('q')).sendKeys('end to end testing\n').then(function(){
     driver.getTitle().then(function(title) {
       console.log('The title is: ' + title);
       driver.quit();
