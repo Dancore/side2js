@@ -17,8 +17,10 @@ console.log("path: " + thepath);
 // var service = new chrome.ServiceBuilder(thepath).build();
 // var driver = new chrome.createDriver(capabilities, service);
 // var driver = new chrome.Driver();
-var chrome = new webdriver.Builder()
-  .forBrowser('chrome');
+var driver = new webdriver.Builder()
+  // .forBrowser('chrome')
+  .forBrowser('firefox')
+  .build();
   
   // ServiceBuilder(thepath);
 // var driver = new webdriver.Builder().forBrowser('chrome').build();
@@ -40,7 +42,7 @@ var driver = chrome.build();
 driver.get('https://www.google.com').then(function(){
   driver.findElement(webdriver.By.name('q')).sendKeys('BrowserStack\n').then(function(){
     driver.getTitle().then(function(title) {
-      console.log(title);
+      console.log('The title is: ' + title);
       driver.quit();
     }).catch(error => { console.log('caught1', error.message); });
   }).catch(error => { console.log('caught2', error.message); });
