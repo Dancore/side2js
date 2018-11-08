@@ -5,10 +5,6 @@ var until = require('selenium-webdriver').until;
 const path = require('path');
 var edge = require('selenium-webdriver/edge');
 
-var capabilities = {
-  // 'browserName' : 'firefox'
-}
-  
 var service = new edge.ServiceBuilder()
      .setPort(55555)
      .build();
