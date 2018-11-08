@@ -42,6 +42,6 @@ driver.get('https://www.google.com').then(function(){
     driver.getTitle().then(function(title) {
       console.log(title);
       driver.quit();
-    }).catch(() => {});
-  });
-}).catch(error => { console.log('caught', error.message); });
+    }).catch(error => { console.log('caught1', error.message); });
+  }).catch(error => { console.log('caught2', error.message); });
+}).catch(error => { console.log('caught3', error.message); });
