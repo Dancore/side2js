@@ -28,3 +28,5 @@ node_modules
 *.sublime-*
 resend_results_batch/csv/*
 tmp
+
+*.png
