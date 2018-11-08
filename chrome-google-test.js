@@ -3,18 +3,18 @@
 var webdriver = require('selenium-webdriver');
 var until = require('selenium-webdriver').until;
 const path = require('path');
-var pchr = path.normalize('selenium-webdriver/chrome');
-console.log("path: " + pchr);
-var chrome = require(pchr);
+// var pchr = path.normalize('selenium-webdriver/chrome');
+// console.log("path: " + pchr);
+// // var chrome = require(pchr);
 // var chrome = require('selenium-webdriver/chrome');
 
 var capabilities = {
   // 'browserName' : 'firefox'
 }
-var thepath = path.normalize(__dirname + '/node_modules/.bin/chromedriver.exe');
-console.log("path: " + thepath);
+// var driverpath = path.normalize(__dirname + '/node_modules/.bin/chromedriver.exe');
+// console.log("path: " + driverpath);
 
-// var service = new chrome.ServiceBuilder(thepath).build();
+// var service = new chrome.ServiceBuilder(driverpath).build();
 // var driver = new chrome.createDriver(capabilities, service);
 // var driver = new chrome.Driver();
 var driver = new webdriver.Builder()
@@ -22,9 +22,9 @@ var driver = new webdriver.Builder()
   .forBrowser('firefox')
   .build();
   
-  // ServiceBuilder(thepath);
+  // ServiceBuilder(driverpath);
 // var driver = new webdriver.Builder().forBrowser('chrome').build();
-var driver = chrome.build();
+// var driver = chrome.build();
 
 // driver.get('http://www.google.com/ncr');
 // driver.findElement(webdriver.By.name('q')).sendKeys('webdriver');
