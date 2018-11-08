@@ -4,8 +4,11 @@ var webdriver = require('selenium-webdriver');
 var until = require('selenium-webdriver').until;
 const path = require('path');
 var edge = require('selenium-webdriver/edge');
+var driverpath = (__dirname + '/node_modules/.bin/MicrosoftWebDriver.exe');
+// driverpath = path.normalize(driverpath); // strangely this test on Edge doesnt work if path is normalized.
+console.log("driverpath: " + driverpath);
 
-var service = new edge.ServiceBuilder()
+var service = new edge.ServiceBuilder(driverpath)
   .setPort(0) // Server port, 0 = any free port.
   .build();
 
