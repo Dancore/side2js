@@ -6,8 +6,8 @@ const path = require('path');
 var edge = require('selenium-webdriver/edge');
 
 var service = new edge.ServiceBuilder()
-     .setPort(55555)
-     .build();
+  .setPort(0) // Server port, 0 = any free port.
+  .build();
 
 var options = new edge.Options();
 
