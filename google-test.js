@@ -1,5 +1,6 @@
-/* This seems to work if called with driver in env PATH like this:
-   env PATH="$PATH:./node_modules/.bin/" node google-test.js */
+/* This seems to work EVEN if *NOT*  called with driver in env PATH like this:
+   env PATH="$PATH:./node_modules/.bin/" node google-test.js 
+   I also had to install edgedriver like this: # npm i edgedriver -g */
 var webdriver = require('selenium-webdriver');
 var until = require('selenium-webdriver').until;
 const path = require('path');
