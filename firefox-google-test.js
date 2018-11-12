@@ -1,14 +1,24 @@
-var webdriver = require('selenium-webdriver');
-var By = require('selenium-webdriver').By,
-    until = require('selenium-webdriver').until,
-    firefox = require('selenium-webdriver/firefox');
+/* This seems to work if called with driver in env PATH like this:
+   env PATH="$PATH:./node_modules/.bin/" node firefox-google-test.js */
 
-var driver = new firefox.Driver();
-//var driver = new webdriver.Builder().
-//   withCapabilities(webdriver.Capabilities.chrome()).build();
+var webdriver = require('selenium-webdriver');   
+var until = require('selenium-webdriver').until;
+const path = require('path');
 
-driver.get('http://www.google.com/ncr');
-driver.findElement(By.name('q')).sendKeys('webdriver');
-driver.findElement(By.name('btnG')).click();
-driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-driver.quit();
+var capabilities = {
+    // 'browserName' : 'firefox'
+}
+
+var driver = new webdriver.Builder()
+    // .forBrowser('chrome')
+    .forBrowser('firefox')
+    .build();
+
+driver.get('https://www.google.com').then(function(){
+    driver.findElement(webdriver.By.name('q')).sendKeys('BrowserStack\n').then(function(){
+    driver.getTitle().then(function(title) {
+        console.log('The title is: ' + title);
+        driver.quit();
+    }).catch(error => { console.log('caught1', error.message); });
+    }).catch(error => { console.log('caught2', error.message); });
+}).catch(error => { console.log('caught3', error.message); });
