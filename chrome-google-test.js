@@ -38,11 +38,19 @@ var driver = new webdriver.Builder()
 // }, 1000);
 
 // driver.quit();
+webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
+  return driver.takeScreenshot().then(function(data) {
+      fs.writeFile(filename, data.replace(/^data:image\/png;base64,/,''), 'base64', function(err) {
+          if(err) throw err;
+      });
+  })
+};
 
 driver.get('https://www.google.com').then(function(){
   driver.findElement(webdriver.By.name('q')).sendKeys('BrowserStack\n').then(function(){
     driver.getTitle().then(function(title) {
       console.log('The title is: ' + title);
+      driver.saveScreenshot('screenshot.png');
       driver.quit();
     }).catch(error => { console.log('caught1', error.message); });
   }).catch(error => { console.log('caught2', error.message); });
