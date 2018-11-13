@@ -14,9 +14,9 @@ var service = new edge.ServiceBuilder(driverpath)
   .setPort(0) // Server port, 0 = any free port.
   .build();
 
-var options = new edge.Options();
+// var options = new edge.Options();
 
-var driver = edge.Driver.createSession(options, service);
+// var driver = edge.Driver.createSession(options, service);
 
 webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
   return driver.takeScreenshot().then(function(data) {
@@ -26,12 +26,12 @@ webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
   })
 };
 
-driver.get('https://www.google.com').then(function(){
-  driver.findElement(webdriver.By.name('q')).sendKeys('end to end testing\n').then(function(){
-    driver.getTitle().then(function(title) {
-      console.log('The title is: ' + title);
-      driver.saveScreenshot('screenshot.png');
-      driver.quit();
-    }).catch(error => { console.log('caught1', error.message); });
-  }).catch(error => { console.log('caught2', error.message); });
-}).catch(error => { console.log('caught3', error.message); });
+// driver.get('https://www.google.com').then(function(){
+//   driver.findElement(webdriver.By.name('q')).sendKeys('end to end testing\n').then(function(){
+//     driver.getTitle().then(function(title) {
+//       console.log('The title is: ' + title);
+//       driver.saveScreenshot('screenshot.png');
+//       driver.quit();
+//     }).catch(error => { console.log('caught1', error.message); });
+//   }).catch(error => { console.log('caught2', error.message); });
+// }).catch(error => { console.log('caught3', error.message); });
