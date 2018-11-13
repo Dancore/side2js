@@ -6,7 +6,8 @@
   "repository": "https://git.arcmage.com/dan/selenium-experiments",
   "dependencies": {
     "browserstack-webdriver": "^2.41.1",
-    "selenium-webdriver": "^4.0.0-alpha.1"
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "selianize": "^3.4.2"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
