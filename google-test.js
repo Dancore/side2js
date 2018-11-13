@@ -3,8 +3,10 @@
    I also had to install edgedriver like this: # npm i edgedriver -g */
 var webdriver = require('selenium-webdriver');
 var until = require('selenium-webdriver').until;
+var selianize = require('selianize').default;
 const path = require('path');
 const fs = require('fs');
+// import fs from 'fs'
 var edge = require('selenium-webdriver/edge');
 var driverpath = (__dirname + '/node_modules/.bin/MicrosoftWebDriver.exe');
 // driverpath = path.normalize(driverpath); // strangely this test on Edge doesnt work if path is normalized.
@@ -35,3 +37,14 @@ webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
 //     }).catch(error => { console.log('caught1', error.message); });
 //   }).catch(error => { console.log('caught2', error.message); });
 // }).catch(error => { console.log('caught3', error.message); });
+var sidefile = "BBA.side";
+// var filedata = fs.readFileSync(sidefile).toString();
+const obj = JSON.parse(fs.readFileSync(sidefile).toString());
+console.log('Side file ' + sidefile + ': ' + obj.id);
+selianize(obj).then(
+  test => { // code
+    console.log('selianized: ' + test);
+    // fs.writeFileSync(obj.name + ".test.js", test);
+  }, 
+  error => { console.log('caught', error.message); } 
+);
