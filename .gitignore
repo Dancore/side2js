@@ -30,3 +30,6 @@ resend_results_batch/csv/*
 tmp
 
 *.png
+
+# if folder is created by selenium-side-runner, probl should ignore:
+side-suite*
