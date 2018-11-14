@@ -17,7 +17,7 @@
     "jest": "^23.6.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "echo \"Running test script\" && node chrome-google-test.js",
     "gqlserver": "cross-var nodemon $npm_package_main",
     "commentapi": "nodemon commentapi.js --watch commentapi.js",
