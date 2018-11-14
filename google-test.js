@@ -42,9 +42,9 @@ var sidefile = "BBA.side";
 const obj = JSON.parse(fs.readFileSync(sidefile).toString());
 console.log('Side file ' + sidefile + ': ' + obj.id);
 selianize(obj).then(
-  test => { // code
-    console.log('selianized: ' + test);
-    // fs.writeFileSync(obj.name + ".test.js", test);
+  code => { // code
+    console.log('selianized: ' + code);
+    // fs.writeFileSync(obj.name + ".test.js", code);
   }, 
   error => { console.log('caught', error.message); } 
 );
