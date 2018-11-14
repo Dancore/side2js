@@ -6,7 +6,7 @@ var until = require('selenium-webdriver').until;
 var selianize = require('selianize').default;
 const path = require('path');
 const fs = require('fs');
-// import fs from 'fs'
+var beautify = require('js-beautify').js;
 var edge = require('selenium-webdriver/edge');
 var driverpath = (__dirname + '/node_modules/.bin/MicrosoftWebDriver.exe');
 // driverpath = path.normalize(driverpath); // strangely this test on Edge doesnt work if path is normalized.
@@ -37,14 +37,37 @@ webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
 //     }).catch(error => { console.log('caught1', error.message); });
 //   }).catch(error => { console.log('caught2', error.message); });
 // }).catch(error => { console.log('caught3', error.message); });
+
 var sidefile = "BBA.side";
 // var filedata = fs.readFileSync(sidefile).toString();
 const obj = JSON.parse(fs.readFileSync(sidefile).toString());
 console.log('Side file ' + sidefile + ': ' + obj.id);
 selianize(obj).then(
-  code => { // code
-    console.log('selianized: ' + code);
-    // fs.writeFileSync(obj.name + ".test.js", code);
+  code => {
+    // code.tests.forEach(test => {
+    //   console.log('selianized code: \n' + test.code + '\n');
+    // });
+    const tests = code.tests
+      .reduce((tests, test) => {
+        // console.log('selianized test: ' + test.name + ' ' + test.code);
+        return (tests += test.code);
+      }, 'const tests = {};')
+      .concat('module.exports = tests;');
+    fs.writeFileSync(obj.name + ".test.js", beautify(tests, { indent_size: 2, space_in_empty_paren: true }));
+    code.suites.forEach(suite => {
+      console.log('suite: ' + suite.name);
+      // fs.writeFileSync(obj.name + ".test.js", code);
+      if (!suite.tests) {
+        // not parallel
+        console.log('no tests?: ' + suite.name);
+      } else if (suite.tests.length) {
+        // fs.mkdirSync(path.join(projectPath, suite.name));
+        // parallel suite
+        suite.tests.forEach(test => {
+          console.log('selianized test: ' + test.name);
+        });
+      }
+    });
   }, 
   error => { console.log('caught', error.message); } 
 );
