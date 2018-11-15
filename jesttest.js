@@ -1,3 +1,10 @@
+// const jest = require('jest');
+// var path = require('path');
+// var tmp = "C:\\Apps\\nodejs\\node_modules\\selenium-side-runner\\node_modules\\jest-environment-selenium\\dist\\setup.js"
+// var tmp = "C:\Apps\nodejs\node_modules\selenium-side-runner\node_modules\jest-environment-selenium\dist\setup.js"
+// tmp = path.normalize(tmp);
+// console.log(tmp);
+
 const tests = require("./BBA-test.js");
 global.Key = require('selenium-webdriver').Key;
 global.URL = require('url').URL;
