@@ -30,7 +30,7 @@ selianize(obj).then(
         return (tests += test.code);
       }, 'const tests = {};')
       .concat(';module.exports = tests;');
-    fs.writeFileSync(jsfile, beautify(tests, { indent_size: 2, space_in_empty_paren: true }));
+    fs.writeFileSync(jsfile, beautify(tests, { indent_size: 2, space_in_empty_paren: true, end_with_newline: true }));
   },
   error => { console.log('caught', error.message); } 
 );
