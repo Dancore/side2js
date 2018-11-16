@@ -2,6 +2,21 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  // modulePaths: [
+  //   "node_modules"
+  // ],
+  setupTestFrameworkScriptFile: "jest-environment-selenium/dist/setup.js",
+  testEnvironment: "jest-environment-selenium",
+  testEnvironmentOptions: {
+    capabilities: {
+      browserName: "chrome"
+    },
+    // params: {},
+    // runId: "f64d1cbfb4dd19faaae25d2ce7459a02",
+    // path: "node_modules",
+    timeout: 15000
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
