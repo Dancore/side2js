@@ -18,19 +18,6 @@
     "jest": "^23.6.0",
     "jest-environment-selenium": "^2.0.0"
   },
-  "jest": {
-    "setupTestFrameworkScriptFile": "jest-environment-selenium/dist/setup.js",
-    "testEnvironment": "jest-environment-selenium",
-    "testEnvironmentOptions": {
-      "capabilities": {
-        "browserName": "chrome"
-      },
-      "params": {},
-      "runId": "f64d1cbfb4dd19faaae25d2ce7459a02",
-      "path": "node_modules",
-      "timeout": 15000
-    }
-  },
   "scripts": {
     "test": "jest",
     "start": "echo \"Running test script\" && node chrome-google-test.js",
