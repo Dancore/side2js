@@ -10,6 +10,7 @@ module.exports = {
   testEnvironmentOptions: {
     capabilities: {
       browserName: "chrome"
+      // browserName: "MicrosoftEdge"
     },
     // params: {},
     // runId: "f64d1cbfb4dd19faaae25d2ce7459a02",
