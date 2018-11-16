@@ -33,3 +33,4 @@ tmp
 
 # if folder is created by selenium-side-runner, probl should ignore:
 side-suite*
+side-tests*
