@@ -30,7 +30,6 @@ selianize(obj).then(
         return (tests += test.code);
       }, 'const tests = {};')
       .concat(';module.exports = tests;');
-    fs.writeFileSync(obj.name + "-test.js", beautify(tests, { indent_size: 2, space_in_empty_paren: true }));
     code.suites.forEach(suite => {
       console.log('suite: ' + suite.name);
       // fs.writeFileSync(obj.name + ".test.js", code);
@@ -46,5 +45,6 @@ selianize(obj).then(
       }
     });
   }, 
+    fs.writeFileSync(jsfile, beautify(tests, { indent_size: 2, space_in_empty_paren: true }));
   error => { console.log('caught', error.message); } 
 );
