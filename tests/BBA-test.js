@@ -10,6 +10,7 @@ tests["Admin-user-attest1"] = async (driver, vars, opts) => {
   await driver.findElement(By.linkText(`Användare`)).then(element => {
     return element.click();
   });
+  await driver.wait(driver.sleep(1500));
   await driver.wait(until.elementLocated(By.css(`input.input.search`)), configuration.timeout);
   await driver.findElement(By.css(`input.input.search`)).then(element => {
     return element.click();
