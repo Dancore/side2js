@@ -1,7 +1,7 @@
 // tmp = path.normalize(tmp);
 // console.log(tmp);
 
-const tests = require("./BBA-test.js");
+const tests = require("./tests/");
 global.Key = require('selenium-webdriver').Key;
 global.URL = require('url').URL;
 global.BASE_URL = configuration.baseUrl || 'https://bbadev.peab.se';
