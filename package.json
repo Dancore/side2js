@@ -1,0 +1,39 @@
+{
+  "name": "selenium-experiments",
+  "private": true,
+  "version": "0.0.0",
+  "description": "testing stuff with selenium testing",
+  "repository": "https://git.arcmage.com/dan/selenium-experiments",
+  "dependencies": {
+    "browserstack-webdriver": "^2.41.1",
+    "chromedriver": "^2.43.1",
+    "js-beautify": "^1.8.8",
+    "selenium-webdriver": "^3.6.0",
+    "selianize": "^3.5.0-alpha.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-curl": "^2.1.0",
+    "grunt-zip": "^0.18.1",
+    "jest": "^23.6.0",
+    "jest-environment-selenium": "^2.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "echo \"Running test script\" && node chrome-google-test.js",
+    "gqlserver": "cross-var nodemon $npm_package_main",
+    "commentapi": "nodemon commentapi.js --watch commentapi.js",
+    "debug": "nodemon --inspect",
+    "lint": "npm run --silent lintall",
+    "lintfix": "npm run --silent lintfixall",
+    "lintclient": "eslint client/** --ignore-pattern *.html",
+    "lintserver": "eslint *.js --ignore-pattern *.html",
+    "lintall": "npm run --silent lintclient -- --quiet && npm run --silent lintserver -- --quiet",
+    "lintfixall": "npm run --silent lintclient -- --quiet --fix-dry-run && npm run --silent lintserver -- --quiet --fix-dry-run",
+    "list-updates": "npm run --silent lu",
+    "lu": "npx ncu --packageFile package.json",
+    "update": "npm run --silent up",
+    "up": "npx ncu -a --packageFile package.json && npm up",
+    "grunt": "npx grunt"
+  }
+}
