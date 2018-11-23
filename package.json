@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "grunt": "^1.0.3",
-    "grunt-curl": "^2.1.0",
+    "grunt-curl": "^2.5.0",
     "grunt-zip": "^0.18.1",
     "jest": "^23.6.0",
     "jest-environment-selenium": "^2.0.0"

@@ -11,5 +11,5 @@ npm install
 ### Usage
 
 ```sh
-node side2js.js sidescript.side [output-path]
+node side2js.js <sidescript.side> [output-path]
 ```
